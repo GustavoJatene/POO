@@ -1,6 +1,6 @@
 from animais import Animais
 
-a1 = Animais('Crocodilo', 11, 90, 'preto')
+a1 = Animais('JACARE',0 ,0  , '')
 
 a1.comer('maçã')
 a1.comer('Carne')
