@@ -1,42 +1,39 @@
 class Animais:
 
-    def __init__(self, nome, idade, peso, corOlhos):
-        self.__nome = nome
-        self.__idade = idade
-        self.__peso = peso
-        self.__corOlhos = corOlhos
+    def __init__(self, nome, idade, peso, corOlhos, comendo=False, dormindo=False ):
+        self.nome = nome
+        self.idade = idade
+        self.peso = peso
+        self.corOlhos = corOlhos
+        self.comendo = comendo
+        self.dormindo = dormindo
 
-    @property
-    def nome(self):
-        return self.__nome
-    @nome.setter
-    def nome(self, valor):
-        self.__nome = valor
+    def dormir(self):
+        if self.dormindo:
+            print(f'{self.nome} já está dormindo.')
+            return
+        print(f'{self.nome} foi dormir.')
+        self.dormindo = True
 
-    @property
-    def idade(self):
-        return self.__idade
-    @idade.setter
-    def idade(self, valor):
-        self.__idade = valor
-
-    @property
-    def peso(self):
-        return self.__peso
-    @peso.setter
-    def peso(self, valor):
-        self.__peso = valor
+    def acordar(self):
+        if not self.dormindo:
+            print(f'{self.nome} já está acordado.')
+            return
+        print(f'{self.nome} acabou de cordar.')
+        self.dormindo = False
 
     def comer(self, alimento):
         if self.comendo:
-            print(f'{self.nome} já está comendo')
+            print(f'{self.nome} já está comendo.')
             return
-        print(f'O {self.nome} está comendo {alimento}.')
+        print(f'{self.nome} está comendo {alimento}.')
         self.comendo = True
 
-    def p_comer(self):
+
+    def parar_comer(self):
         if not self.comendo:
-            print(f'O {self.nome} continua sem comer.')
+            print(f'{self.nome} continua sem comer.')
             return
-        print(f'{self.nome} parou de comer')
+        print(f'{self.nome} parou de comer.')
         self.comendo = False
+
