@@ -9,6 +9,9 @@ class Animais:
         self.dormindo = dormindo
 
     def dormir(self):
+        if self.comendo:
+            print(f'{self.nome} não pode dormir enquanto está comendo.')
+            return
         if self.dormindo:
             print(f'{self.nome} já está dormindo.')
             return
@@ -23,6 +26,9 @@ class Animais:
         self.dormindo = False
 
     def comer(self, alimento):
+        if self.dormindo:
+            print(f'{self.nome} não pode dormir enquanto come.')
+            return
         if self.comendo:
             print(f'{self.nome} já está comendo.')
             return
