@@ -13,3 +13,6 @@ class Mamiferos(Animais):
             return
         print(f'{self.nome} Sentou')
         self.sentado = True
+
+    def amamentando(self):
+        pass
