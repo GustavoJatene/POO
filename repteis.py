@@ -1,5 +1,5 @@
 from animais import Animais
-class Aves(Animais):
+class Repteis(Animais):
     def __init__(self, nome, idade, peso, corOlhos, tipoEscamas, comprimentoCalda, rastejando = False):
         Animais.__init__(self, nome, idade, peso, corOlhos)
         self.tipoEscamas = tipoEscamas
